@@ -1,0 +1,12 @@
+#searchFormDiv {
+    width: 60%;
+    margin: auto;
+    margin-top: 2em;
+    padding: 1.5em .5em;
+    border: 2px solid black
+}
+
+.form-control {
+    width: 80%;
+    margin: auto;
+}
