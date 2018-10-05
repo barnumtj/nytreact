@@ -8,7 +8,12 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <SearchForm />
+        <SearchForm
+         handleFormSubmit={this.handleFormSubmit}
+         handleTopicChange={this.handleTopicChange}
+         handleStartYearChange={this.handleStartYearChange}
+         handleEndYearChange={this.handleEndYearChange}
+          />
       </div>
     );
   }
