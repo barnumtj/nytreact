@@ -3,6 +3,8 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar'
 import SearchForm from './components/SearchForm/SearchForm'
 
+
+
 class App extends Component {
   render() {
     return (
@@ -13,7 +15,9 @@ class App extends Component {
          handleTopicChange={this.handleTopicChange}
          handleStartYearChange={this.handleStartYearChange}
          handleEndYearChange={this.handleEndYearChange}
-          />
+         handleSaveButton={this.handleSaveButton}
+         />
+        
       </div>
     );
   }
