@@ -15,7 +15,7 @@ class App extends Component {
          handleTopicChange={this.handleTopicChange}
          handleStartYearChange={this.handleStartYearChange}
          handleEndYearChange={this.handleEndYearChange}
-         handleSaveButton={this.handleSaveButton}
+         onClick={this.handleSaveButton}
          />
         
       </div>

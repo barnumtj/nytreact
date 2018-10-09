@@ -15,7 +15,6 @@ class SearchForm extends React.Component {
 
   handleTopicChange = (event) => {
     this.setState({ topic: event.target.value });
-
   }
 
   // Keep track of what user types into topic input so that input can be grabbed later
@@ -46,16 +45,24 @@ class SearchForm extends React.Component {
         title={article.headline.main}
         date={article.pub_date}
         url={article.web_url}
+        handleSaveButton={this.handleSaveButton}
       />
     ));
   }
+
+  getSavedArticles = () => {
+    API.getArticle()
+      .then((res) => {
+        this.setState({ saved: res.data });
+      });
+  }
+  
   handleSaveButton = (id) => {
     const findArticleByID = this.state.articles.find((el) => el._id === id);
     console.log("findArticleByID: ", findArticleByID);
-    const newSave = {title: findArticleByID.headline.main, date: findArticleByID.pub_date, url: findArticleByID.web_url};
+    const newSave = { title: findArticleByID.headline.main, date: findArticleByID.pub_date, url: findArticleByID.web_url };
     API.saveArticle(newSave)
-    .then(this.getSavedArticles());
-    
+      .then(this.getSavedArticles());
   }
 
   render() {
